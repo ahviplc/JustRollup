@@ -1,0 +1,32 @@
+{
+  "name": "JustRollup",
+  "version": "1.0.0",
+  "description": "JustRollup,Rollup打包全平台JS库小demo.",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "dev": "rollup -c -w rollup.config.js"
+  },
+  "keywords": [
+    "Rollup",
+    "demo"
+  ],
+  "author": "LC ahlc@sina.cn",
+  "homepage": "https://github.com/ahviplc/JustRollup",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "rollup": "^2.35.1",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist",
+    "src",
+    "tests",
+    "README.md"
+  ]
+}
