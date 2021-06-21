@@ -28,17 +28,27 @@ yarn build
 ## Links
 
 ```markdown
-
 https://github.com/rollup/rollup
 
 https://www.rollupjs.com/
+
+https://rollupjs.org/guide/en/#quick-start
 
 https://github.com/kefranabg/readme-md-generator
 
 https://hub.fastgit.org/daqianduanshuo/daynote
 
+Rollup打包全平台JS库
 https://www.bilibili.com/video/BV1bi4y1c7fU
 
+使用Rollup打包JavaScript
+https://www.jianshu.com/p/6a7413481bd2
+
+rollup中的esm模块 和 cmd模块
+https://juejin.cn/post/6932629330581258253
+
+script标签之type = module
+https://blog.csdn.net/chenyu1105811473/article/details/107642435
 ```
 
 ## Author

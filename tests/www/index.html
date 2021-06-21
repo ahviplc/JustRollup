@@ -1,11 +1,34 @@
-<html>
+<html lang="zh">
+<meta charset="UTF-8">
+<title>JustRollup 浏览器测试页面</title>
 <head>
     <script src="../../dist/JustRollup.min.js"></script>
 </head>
 <body>
+<!--方法1：引入module.js，然后在script标签里面调用-->
+<!--可用-->
+<script type="module">
+    import {cm, hello, goodbye} from '../../dist/esm/index.js'
+    // module in browser
+    goodbye()
+    hello()
+    cm()
+</script>
+
+<!--方法2：直接引入index.js，使用src引入-->
+<!--暂时没有成功使用-->
+<script type="module" src="../../dist/esm/index.js">
+</script>
+
 <script>
-    myLibrary.hello()
-    myLibrary.cm()
+    console.log(window);
+    // JustRollup 挂载在 window 上
+    // window.JustRollup // {cm: ƒ, goodbye: ƒ, hello: ƒ}
+    console.log(window.JustRollup);
+    // 一下均可成功调用
+    JustRollup.hello()
+    JustRollup.goodbye()
+    window.JustRollup.cm()
 </script>
 </body>
 </html>

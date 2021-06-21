@@ -2,6 +2,7 @@
   "name": "JustRollup",
   "version": "1.0.0",
   "description": "JustRollup,Rollup打包全平台JS库小demo.",
+  "type": "commonjs",
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "dev": "rollup -c -w rollup.config.js"
