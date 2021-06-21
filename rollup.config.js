@@ -19,7 +19,7 @@ export default [
         output: {
             file: `dist/${pkg.name}.min.js`,
             format: "umd",
-            name: "myLibrary", // this is the name of the global object
+            name: "JustRollup", // this is the name of the global object
             esModule: false,
             exports: "named",
             sourcemap: true,
