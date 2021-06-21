@@ -8,7 +8,9 @@
 
 > JustRollup,Rollup打包全平台JS库小demo.
 
-### 🏠 [Homepage](https://github.com/ahviplc/JustRollup)
+### 🏠 [Homepage-gitee](https://gitee.com/ahviplc/JustRollup)
+
+### 🏠 [Homepage-github](https://github.com/ahviplc/JustRollup)
 
 ## Install
 

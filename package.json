@@ -11,7 +11,7 @@
     "demo"
   ],
   "author": "LC ahlc@sina.cn",
-  "homepage": "https://github.com/ahviplc/JustRollup",
+  "homepage": "https://gitee.com/ahviplc/JustRollup",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.10",
