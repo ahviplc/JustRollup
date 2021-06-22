@@ -26,7 +26,9 @@
 
 ```sh
 npm i
+npm install
 或者
+yarn
 yarn install
 ```
 
@@ -35,6 +37,9 @@ yarn install
 `打包`
 
 ```sh
+npm run dev
+npm run build
+或者
 yarn dev
 yarn build
 ```
