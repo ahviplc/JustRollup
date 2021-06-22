@@ -8,7 +8,11 @@
 
 > JustRollup,Rollup打包全平台JS库小demo.
 
-`dist/cjs/index.js 可上传npm 或者直接node项目本地引入 当个node的工具类库.`
+`以下说明` **all tests pass**
+
+`dist/cjs/index.js 可上传npm 或者直接node项目本地引入 cjs规范 可直接当个node的工具类库.`
+
+`dist/esm/index.js 可上传npm 或者直接node项目本地引入 esm规范 package,json 中设置 "type": "module" 并且 需要 node 版本 >= 13 才可当个node的工具类库.`
 
 `dist/JustRollup.min.js 将此引入浏览器端html页面,也可以当js工具类库.`
 
