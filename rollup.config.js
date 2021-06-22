@@ -2,6 +2,7 @@ import {nodeResolve} from "@rollup/plugin-node-resolve";
 import {terser} from "rollup-plugin-terser";
 import babel from "@rollup/plugin-babel";
 import pkg from "./package.json";
+import commonjs from '@rollup/plugin-commonjs'
 
 const input = ["src/index.js"];
 export default [
@@ -15,6 +16,7 @@ export default [
                 babelHelpers: "bundled",
             }),
             terser(),
+            commonjs(),
         ],
         output: {
             file: `dist/${pkg.name}.min.js`,
@@ -25,11 +27,11 @@ export default [
             sourcemap: true,
         },
     },
-        // ESM and CJS
-        // node 环境支持
+    // ESM and CJS
+    // node 环境支持
     {
         input,
-        plugins: [nodeResolve()],
+        plugins: [nodeResolve(), commonjs(),],
         output: [
             {
                 dir: "dist/esm",

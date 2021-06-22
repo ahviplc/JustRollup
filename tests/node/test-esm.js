@@ -12,8 +12,23 @@
 // import {cm, hello, goodbye} from '../../dist/esm/index.js'
 
 // 所以下面代码为解构代码 把每个方法名拿出 直接调用即可
-import {cm, hello, goodbye} from '../../dist/esm/index.js'
+import {cm, hello, goodbye, timerInfo, now_datetime, now_time, now_date} from '../../dist/esm/index.js'
 
 goodbye()
 hello()
 cm()
+console.log(timerInfo);
+console.log(now_datetime());
+console.log(now_date());
+console.log(now_time());
+
+// --------------------------输出展示--------------------------
+// goodbye
+// hello
+// hello lc
+// { name: 'timer', description: '时间处理工具.', version: 'v0.0.1' }
+// 2021-06-22 18:14:17
+// 2021-06-22
+// 18:14:17
+// --------------------------输出展示--------------------------
+
