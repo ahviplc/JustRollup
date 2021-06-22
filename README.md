@@ -8,7 +8,7 @@
 
 > JustRollup,Rollup打包全平台JS库小demo.
 
-`可上传npm 当个node的工具类库.`
+`dist/cjs/index.js 可上传npm 或者直接node项目本地引入 当个node的工具类库.`
 
 `dist/JustRollup.min.js 将此引入浏览器端html页面,也可以当js工具类库.`
 
