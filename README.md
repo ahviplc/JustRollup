@@ -32,7 +32,7 @@ yarn
 yarn install
 ```
 
-## Use
+## Usage
 
 `打包`
 
@@ -139,7 +139,7 @@ export和export default的区别 - 二猫子 - 博客园
 https://www.cnblogs.com/sherrycat/p/11152994.html
 ```
 
-## note
+## Notes
 
 ### 1. 随记
 ```markdown
