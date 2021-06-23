@@ -1,10 +1,84 @@
 <html lang="zh">
 <meta charset="UTF-8">
-<title>JustRollup 浏览器测试页面</title>
+<title>JustRollup 浏览器测试页面 内含 中国亲戚关系计算器</title>
 <head>
     <script src="../../dist/JustRollup.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
+<style>
+
+</style>
 <body>
+<label>中国亲戚关系计算器</label>
+<!--usage-->
+<div>
+    <span class="help-inline">算称谓 请输入要查询的称谓类似 爸爸的妈妈 爸爸的爸爸 爸爸的妹妹 妈妈的姐姐 等！</span>
+</div>
+<div>
+    <span class="help-inline">算关系 请输入要查询的关系类似 爷爷 奶奶 爸爸 妈妈 姥姥 姥爷 小姑 等！</span>
+</div>
+<!--1 找称呼 还是 0 找关系-->
+<label>计算类型</label>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="typeRadios" id="typeRadios1" value=1 checked>
+    <label class="form-check-label" for="typeRadios">
+        找称呼
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="typeRadios" id="typeRadios2" value=0>
+    <label class="form-check-label" for="typeRadios">
+        找关系
+    </label>
+</div>
+
+<!--sex 0女性,1男性-->
+<label>我的性别</label>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="sexRadios" id="sexRadios1" value="1" checked>
+    <label class="form-check-label" for="sexRadios">
+        man
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="sexRadios" id="sexRadios2" value="0">
+    <label class="form-check-label" for="sexRadios">
+        woman
+    </label>
+</div>
+
+<!--1 我称呼对方 还是 0 对方称呼我-->
+<label>称呼方式</label>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="reverseRadios" id="reverseRadios1" value="1" checked>
+    <label class="form-check-label" for="reverseRadios">
+        我称呼对方
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="reverseRadios" id="reverseRadios2" value="0">
+    <label class="form-check-label" for="reverseRadios">
+        对方称呼我
+    </label>
+</div>
+
+<div class="input-group" style="margin-top: 30px">
+    <div class="input-group-prepend">
+        <span class="input-group-text">谁的谁？</span>
+    </div>
+    <textarea class="form-control" aria-label="With textarea" id="okRLDoneIn"
+              placeholder="找称谓写法(称谓用'的'字分开):爸爸的妹妹 | 找关系写法 直接写一个称谓:爷爷">爸爸的妹妹</textarea>
+</div>
+
+<div class="input-group" style="margin-top: 30px">
+    <div class="input-group-prepend">
+        <span class="input-group-text">计算结果为:</span>
+    </div>
+    <textarea class="form-control" aria-label="With textarea" id="okRLDoneOut"></textarea>
+</div>
+
+<button type="button" class="btn btn-primary" onclick="okDone()" style="margin-top: 30px">叫什么？</button>
+
 <!--方法1：引入module.js，然后在script标签里面调用-->
 <!--可用-->
 <script type="module">
@@ -36,6 +110,88 @@
     console.log(JustRollup.now_datetime());
     console.log(JustRollup.now_date());
     console.log(JustRollup.now_time());
+
+    // utils_obj 对象
+    console.log(JustRollup.utils_obj);
+    JustRollup.utils_obj.call_me()
+    JustRollup.utils_obj.call_you()
+    JustRollup.call_diy_export_fun()
+
+    // 进入页面 首先执行一次 okDone()
+    okDone()
+
+    // 亲戚关系 查询按钮
+    function okDone() {
+        // 创建options
+        // text 输入的文本
+        // sex 自己的性别：0女性,1男性
+        // type 转换类型：'default'算称谓,'chain'算关系(此时reverse无效)
+        // reverse 称呼方式：true对方称呼我,false我称呼对方
+        const options = {text: '爸爸的妹妹', sex: 1, type: 'chain', reverse: false};
+        // 首先处理 计算类型 type 注意 字符串string类型
+        // 1 找称呼 0 找关系
+        // type 转换类型：'default'算称谓,'chain'算关系(此时reverse无效)
+        const typeRadios = document.getElementsByName('typeRadios');
+        for (let i = 0, length = typeRadios.length; i < length; i++) {
+            if (typeRadios[i].checked) {
+                const typeNum = Number((typeRadios[i].value))
+                // 弹出选中值
+                console.log('type 1 找称呼 还是 0 找关系 => 你是数字 ', typeNum)
+                // 选中后 给option的sex赋值 退出循环
+                options.type = typeNum === 1 ? 'default' : 'chain';
+                break;
+            }
+        }
+
+        // 再处理 性别 sex 注意 int类型
+        // 0女性,1男性
+        // sex 自己的性别：0女性,1男性
+        const sexRadios = document.getElementsByName('sexRadios');
+        for (let i = 0, length = sexRadios.length; i < length; i++) {
+            if (sexRadios[i].checked) {
+                const sexNum = Number((sexRadios[i].value))
+                // 弹出选中值
+                console.log('sex 0女性,1男性 => 你是数字 ', sexNum)
+                // 选中后 给option的sex赋值 退出循环
+                options.sex = sexNum
+                break;
+            }
+        }
+
+        // 再处理 称呼方式 reverse 注意 布尔Boolean类型
+        // 1 我称呼对方 还是 0 对方称呼我
+        // reverse 称呼方式：true对方称呼我,false我称呼对方
+        const reverseRadios = document.getElementsByName('reverseRadios');
+        for (let i = 0, length = reverseRadios.length; i < length; i++) {
+            if (reverseRadios[i].checked) {
+                const reverseNum = Number((reverseRadios[i].value))
+                // 弹出选中值
+                console.log('reverse 1 false 我称呼对方 还是 0 true 对方称呼我 => 你是数字 ', reverseNum)
+                // 选中后 给option的sex赋值 退出循环
+                options.reverse = reverseNum === 0 ? true : false;
+                break;
+            }
+        }
+
+        // 关系查询问题 q
+        const q = document.getElementById("okRLDoneIn").value;
+        // console.log(q)
+        // 给option的text赋值 把问题赋值给 options.text
+        options.text = q
+        // 称呼答案 a
+        console.log('options => ', options);
+        result = JustRollup.utils_obj.relationship(options);
+        console.log('result,result.length => ', result, result.length);
+        // 重新显示一下
+        // 在 rl_show 元素 显示
+        const qa = options.text + " => " + result
+        console.log(qa);
+        if (result.length >= 1) { // result是返回的字符串数组 这个代表有返回
+            document.getElementById('okRLDoneOut').value = qa
+        } else { // 这个代表无返回
+            document.getElementById('okRLDoneOut').value = '貌似他/她跟你不是很熟哦!'
+        }
+    }
 </script>
 </body>
 </html>

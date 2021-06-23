@@ -12,7 +12,17 @@
 // import {cm, hello, goodbye} from '../../dist/esm/index.js'
 
 // 所以下面代码为解构代码 把每个方法名拿出 直接调用即可
-import {cm, hello, goodbye, timerInfo, now_datetime, now_time, now_date} from '../../dist/esm/index.js'
+import {
+    cm,
+    hello,
+    goodbye,
+    timerInfo,
+    now_datetime,
+    now_time,
+    now_date,
+    call_diy_export_fun,
+    utils_obj
+} from '../../dist/esm/index.js'
 
 goodbye()
 hello()
@@ -21,6 +31,15 @@ console.log(timerInfo);
 console.log(now_datetime());
 console.log(now_date());
 console.log(now_time());
+
+// console.log(utils_obj);
+utils_obj.call_me() // hello lc
+utils_obj.call_you() // hello you
+call_diy_export_fun() // call_diy_export_fun
+// 可用 relationship 三方模块
+const options = {text: '爸爸的妈妈', sex: 1};
+const result = utils_obj.relationship(options);
+console.log(result); // [ '奶奶' ]
 
 // src/myEvents 打包出去的话 下面会有值的
 // import {myEvents} from '../../dist/esm/index.js'

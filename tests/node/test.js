@@ -15,3 +15,13 @@ console.log(myLibrary.timerInfo); // { name: 'timer', description: '时间处理
 console.log(myLibrary.now_datetime()); // 2021-06-22 18:13:11
 console.log(myLibrary.now_date()); // 2021-06-22
 console.log(myLibrary.now_time()); // 18:13:11
+
+myLibrary.utils_obj.call_me() // hello lc
+myLibrary.utils_obj.call_you() // hello you
+myLibrary.call_diy_export_fun() // call_diy_export_fun
+
+// 可用 relationship 三方模块
+const options = {text: '爸爸的爸爸', sex: 1};
+const result = myLibrary.utils_obj.relationship(options);
+console.log(result); // [ '爷爷' ]
+

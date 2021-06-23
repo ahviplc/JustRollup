@@ -15,14 +15,14 @@ export default [
         // 浏览器 node 环境都支持
         // 但是
         // 可以保证 node环境和浏览器环境 肯定都可用
-        input,
+        input, // 和  input:input, 等价
         plugins: [
             nodeResolve(),
+            commonjs(),
             babel({
                 babelHelpers: "bundled",
             }),
             terser(),
-            commonjs(),
         ],
         output: {
             file: `dist/${pkg.name}.min.js`,
@@ -41,11 +41,11 @@ export default [
         input: node_input,
         plugins: [
             nodeResolve(),
+            commonjs(),
             babel({
                 babelHelpers: "bundled",
             }),
             terser(),
-            commonjs(),
         ],
         output: {
             file: `dist/${pkg.name}.node.min.js`,

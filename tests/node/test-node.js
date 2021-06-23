@@ -32,13 +32,34 @@ myEvents.emit('OnDoSth', real_options);
 real_options.doWhat = '' || undefined
 myEvents.emit('OnDoSth', real_options);
 
+// 另外一个模块的测试
+JustRollupNode.utils_obj.call_me() // hello lc
+JustRollupNode.utils_obj.call_you() // hello you
+JustRollupNode.call_diy_export_fun() // call_diy_export_fun
+
+// 可用 relationship 三方模块
+const options = {text: '爸爸的妹妹', sex: 1};
+const result = JustRollupNode.utils_obj.relationship(options);
+console.log(result); // [ '姑姐' ]
+//
+
 // ================================= 输出 =================================
 
-// {
-//     cm: [Function (anonymous)],
-//         goodbye: [Function (anonymous)],
-//     hello: [Function (anonymous)],
-//     myEvents: EventEmitter {
+// JustRollupNode =>  {
+//     call_diy_export_fun: [Function (anonymous)],
+//         cm: [Function: n],
+//     goodbye: [Function (anonymous)],
+//         hello: [Function (anonymous)],
+//         myEvents: EventEmitter {
+//         _events: [Object: null prototype] {
+//             OnDoSth: [Function (anonymous)],
+//                 onSuccess: [Function (anonymous)],
+//                 onFailed: [Function (anonymous)]
+//         },
+//         _eventsCount: 3,
+//             _maxListeners: undefined,
+//             [Symbol(kCapture)]: false
+//     },
 //     _events: [Object: null prototype] {
 //         OnDoSth: [Function (anonymous)],
 //             onSuccess: [Function (anonymous)],
@@ -47,9 +68,5 @@ myEvents.emit('OnDoSth', real_options);
 //     _eventsCount: 3,
 //         _maxListeners: undefined,
 //         [Symbol(kCapture)]: false
-// },
-//     now_date: [Function (anonymous)],
-//         now_datetime: [Function (anonymous)],
-//     now_time: [Function (anonymous)],
-//     timerInfo: { name: 'timer', description: '时间处理工具.', version: 'v0.0.1' }
 // }
+

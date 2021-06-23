@@ -15,3 +15,12 @@ export {timerInfo, now_datetime, now_date, now_time}
 import myEvents from './myEvents/myEvents'
 
 export {myEvents}
+
+// 统一出口文件 index.js
+// 再次 导入 导出 utils_obj
+// utils_obj 是 utils 下所有方法和对象体的封装对象
+// call_diy_export_fun 自己直接 export 出来的
+// relationship.js 这个亲戚算法 是node环境和浏览器环境 均可使用
+import {call_diy_export_fun, utils_obj} from "./utils/utils";
+
+export {call_diy_export_fun, utils_obj}

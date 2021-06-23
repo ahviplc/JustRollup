@@ -118,10 +118,30 @@ https://github.com/HuYuee/blog/issues/21
 关于rollup的demo，基本把大部分情况的使用都涉及到了
 GitHub - HuYuee/rollup-demo: rollup技术分享
 https://github.com/HuYuee/rollup-demo
+
+详解AMD、CommonJS和UMD模块化规范_奋斗的小绿萝-CSDN博客_umd规范
+https://blog.csdn.net/weixin_40817115/article/details/81229337
+
+可能是最详细的UMD模块入门指南 - 简书 -【https://github.com/cumt-robin/umd-learning】
+https://www.jianshu.com/p/9f5a0351a532
+
+js中Prototype属性解释及常用方法 - 梦由心生 - 博客园
+https://www.cnblogs.com/wulihong/p/8906231.html
+
+tests/www/index.html 下 LC也做了一个 和这个功能完成性 完整性 都差不多一致了
+中国亲戚关系计算器
+https://passer-by.com/relationship/
+
+GitHub - mumuy/relationship: Chinese kinship system.中国亲戚关系计算器 - 家庭称谓/称呼计算/亲戚关系算法
+https://github.com/mumuy/relationship
+
+export和export default的区别 - 二猫子 - 博客园
+https://www.cnblogs.com/sherrycat/p/11152994.html
 ```
 
 ## note
 
+### 1. 随记
 ```markdown
 src/node-index.js
 下添加
@@ -131,6 +151,26 @@ import myEvents from './myEvents/myEvents'
 export {myEvents}
 
 打包到 dist/JustRollup.node.min.js
+```
+
+### 2. 注意点
+
+```markdown
+在同一个 Rollup 配置中使用 @rollup/plugin-babel 和 @rollup/plugin-commonjs 时，
+需要注意的是 @rollup/plugin-commonjs 必须放在 plugins 数组中的这个插件之前，
+这样两者才能正常工作
+```
+
+### 3. 小知识
+
+`详解AMD、CommonJS和UMD模块化规范`
+
+```markdown
+CJS: CommonJS模块可以说是当前最流行的模块定义规范。相比于AMD，它的工作效率更高、语法更简单。一开始，CommonJS模块是JavaScript服务器模块的规范。
+
+AMD：Asynchronous Module Definition（异步模块规范），为浏览器设计的模块定义规范，最老的方式之一，专为浏览器而设计。
+
+UMD：Universal Module Definition（通用模块规范），是由社区想出来的一种整合了CommonJS和AMD两个模块定义规范的方法。让你的模块能在javascript所有运行环境中发挥作用。
 ```
 
 ## Author
