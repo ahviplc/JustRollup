@@ -20,6 +20,8 @@ var dayjs_min = {exports: {}};
 
 var dayjs = dayjs_min.exports;
 
+// src/timer/timer.js 使用的是 esm 规范代码 书写和导出
+
 const timerInfo = {
     name: 'timer',
     description: '时间处理工具.',

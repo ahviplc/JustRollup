@@ -22,6 +22,10 @@ console.log(now_datetime());
 console.log(now_date());
 console.log(now_time());
 
+// src/myEvents 打包出去的话 下面会有值的
+// import {myEvents} from '../../dist/esm/index.js'
+// console.log(myEvents);
+
 // --------------------------输出展示--------------------------
 // goodbye
 // hello
@@ -30,5 +34,18 @@ console.log(now_time());
 // 2021-06-22 18:14:17
 // 2021-06-22
 // 18:14:17
+
+// MyEvents {
+//     _events: [Object: null prototype] {
+//         OnDoSth: [Function: OnDoSth],
+//         onSuccess: [Function: onSuccess],
+//         onFailed: [Function: onFailed]
+//     },
+//     _eventsCount: 3,
+//         _maxListeners: undefined,
+//         [Symbol(kCapture)]: false
+// }
+
 // --------------------------输出展示--------------------------
+
 

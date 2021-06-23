@@ -1,3 +1,4 @@
+// src/timer/timer.js 使用的是 esm 规范代码 书写和导出
 import dayjs from "dayjs";
 
 const timerInfo = {
