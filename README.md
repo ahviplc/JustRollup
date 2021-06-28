@@ -137,6 +137,21 @@ https://github.com/mumuy/relationship
 
 export和export default的区别 - 二猫子 - 博客园
 https://www.cnblogs.com/sherrycat/p/11152994.html
+
+Ramda Documentation
+https://ramdajs.com/
+
+Ramda Documentation
+https://ramdajs.com/docs/#
+
+GitHub - ramda/ramda: Practical functional Javascript
+https://github.com/ramda/ramda
+
+ramda CDN by jsDelivr - A CDN for npm and GitHub
+https://www.jsdelivr.com/package/npm/ramda
+
+ramda CDN by jsDelivr - A CDN for npm and GitHub
+https://www.jsdelivr.com/package/npm/ramda?tab=collection
 ```
 
 ## Notes
