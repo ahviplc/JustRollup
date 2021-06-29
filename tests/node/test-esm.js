@@ -21,7 +21,8 @@ import {
     now_time,
     now_date,
     call_diy_export_fun,
-    utils_obj
+    utils_obj,
+    getJustRollupInfo
 } from '../../dist/esm/index.js'
 
 goodbye()
@@ -45,6 +46,22 @@ console.log(result); // [ '奶奶' ]
 // import {myEvents} from '../../dist/esm/index.js'
 // console.log(myEvents);
 
+// 测试 暴露回调函数 getJustRollupInfo 这个方法 来获取 JustRollup 这个lib的相关信息
+// mockStatus: 1 成功回调会执行
+// mockStatus: 2 失败回调会执行
+// mockStatus: X 成功回调会执行 返回其他情况逻辑
+getJustRollupInfo({mockStatus: 2}, {
+    success: function (res) {
+        console.log('res', res);
+    },
+    fail: (err) => {
+        console.log('err', err); // err { code: '1001', msg: 'fail mockStatus = 2,please try later.' }
+    },
+    complete: () => {
+        console.log("done") // done
+    }
+})
+
 // --------------------------输出展示--------------------------
 // goodbye
 // hello
@@ -53,6 +70,12 @@ console.log(result); // [ '奶奶' ]
 // 2021-06-22 18:14:17
 // 2021-06-22
 // 18:14:17
+// hello lc
+// hello you
+// call_diy_export_fun
+// [ '奶奶' ]
+// err { code: '1001', msg: 'fail mockStatus = 2,please try later.' }
+// done
 
 // MyEvents {
 //     _events: [Object: null prototype] {

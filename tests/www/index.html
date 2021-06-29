@@ -84,7 +84,7 @@
 <!--方法1：引入module.js，然后在script标签里面调用-->
 <!--可用-->
 <script type="module">
-    import {cm, hello, goodbye, timerInfo, now_datetime, now_date, now_time} from '../../dist/esm/index.js'
+    import {cm, hello, goodbye, timerInfo, now_datetime, now_date, now_time, getJustRollupInfo} from '../../dist/esm/index.js'
     // module in browser
     goodbye()
     hello()
@@ -93,6 +93,23 @@
     console.log(now_datetime());
     console.log(now_date());
     console.log(now_time());
+
+    // 测试 暴露回调函数 getJustRollupInfo 这个方法 来获取 JustRollup 这个lib的相关信息
+    // mockStatus: 1 成功回调会执行
+    // mockStatus: 2 失败回调会执行
+    // mockStatus: X 成功回调会执行 返回其他情况逻辑
+    // 此为 mockStatus: 1
+    getJustRollupInfo({mockStatus: 1}, {
+        success: function (res) {
+            console.log('getJustRollupInfo res1', res);
+        },
+        fail: (err) => {
+            console.log('getJustRollupInfo err1', err); // 去看控制台
+        },
+        complete: () => {
+            console.log("getJustRollupInfo done1") // done
+        }
+    })
 </script>
 
 <!--方法2：直接引入index.js，使用src引入-->
@@ -131,6 +148,36 @@
     JustRollup.utils_obj.call_me()
     JustRollup.utils_obj.call_you()
     JustRollup.call_diy_export_fun()
+
+    // 测试 暴露回调函数 getJustRollupInfo 这个方法 来获取 JustRollup 这个lib的相关信息
+    // mockStatus: 1 成功回调会执行
+    // mockStatus: 2 失败回调会执行
+    // mockStatus: X 成功回调会执行 返回其他情况逻辑
+    // 此为 mockStatus: 2
+    JustRollup.getJustRollupInfo({mockStatus: 2}, {
+        success: function (res) {
+            console.log('getJustRollupInfo res2', res);
+        },
+        fail: (err) => {
+            console.log('getJustRollupInfo err2', err); // err { code: '1001', msg: 'fail mockStatus = 2,please try later.' }
+        },
+        complete: () => {
+            console.log("getJustRollupInfo done2") // done
+        }
+    })
+
+    // 此为 mockStatus: 3, who: 'ahviplc'
+    JustRollup.getJustRollupInfo({mockStatus: 3, who: 'ahviplc'}, {
+        success: function (res) {
+            console.log('getJustRollupInfo res3', res);
+        },
+        fail: (err) => {
+            console.log('getJustRollupInfo err3', err); // 去看控制台
+        },
+        complete: () => {
+            console.log("getJustRollupInfo done3") // done
+        }
+    })
 
     // 进入页面 首先执行一次 okDone()
     okDone()

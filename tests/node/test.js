@@ -25,3 +25,27 @@ const options = {text: '爸爸的爸爸', sex: 1};
 const result = myLibrary.utils_obj.relationship(options);
 console.log(result); // [ '爷爷' ]
 
+// 测试 暴露回调函数 getJustRollupInfo 这个方法 来获取 JustRollup 这个lib的相关信息
+// mockStatus: 1 成功回调会执行
+// mockStatus: 2 失败回调会执行
+// mockStatus: X 成功回调会执行 返回其他情况逻辑
+myLibrary.getJustRollupInfo({mockStatus: 1}, {
+    success: function (res) {
+        console.log('res', res);
+    },
+    fail: (err) => {
+        console.log('err', err);
+    },
+    complete: () => {
+        console.log("done") // done
+    }
+})
+
+// tests/node/test.js:34 输出
+// res {
+//     res: { author: 'LC', age: 18, desc: '这是一个全端适配使用js工具库.' },
+//     codeMsg: { code: '0000', msg: 'success' },
+//     data: { mockStatus: 1, who: 'LC' },
+//     msg: 'Hello, LC'
+// }
+

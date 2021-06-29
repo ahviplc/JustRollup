@@ -164,6 +164,28 @@ http://lodash.net/
 
 GitHub - lodash/lodash: A modern JavaScript utility library delivering modularity, performance, & extras.
 https://github.com/lodash/lodash
+
+回调函数 触发灵感的地方 打算自己做一个类似的 感觉一下
+系统信息 - uni-app官网
+https://uniapp.dcloud.io/api/system/info
+
+JS回调函数（深入篇） - 黑乌鸦 - 博客园
+https://www.cnblogs.com/gaosheng-221/p/6045483.html
+
+对象的扩展 - ECMAScript 6入门
+https://es6.ruanyifeng.com/#docs/object
+
+js中的异常捕获 try{} catch{}（一） - C小小 - 博客园
+https://www.cnblogs.com/tianxiaoxiao/p/9980045.html
+
+JS中给函数参数添加默认值 - Antineutrino - 博客园
+https://www.cnblogs.com/antineutrino/p/4869041.html
+
+js函数参数默认值_郝啊的博客-CSDN博客_js 函数参数默认值
+https://blog.csdn.net/qq_43518645/article/details/107254720
+
+如何设计API返回码（错误码）？_东东爱编码博客-CSDN博客
+https://blog.csdn.net/u012365780/article/details/108468577
 ```
 
 ## Notes

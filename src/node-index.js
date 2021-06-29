@@ -21,6 +21,7 @@ export {myEvents}
 // utils_obj 是 utils 下所有方法和对象体的封装对象
 // call_diy_export_fun 自己直接 export 出来的
 // relationship.js 这个亲戚算法 是node环境和浏览器环境 均可使用
-import {call_diy_export_fun, utils_obj} from "./utils/utils";
+// 暴露回调函数 getJustRollupInfo 这个方法 来获取 JustRollup 这个lib的相关信息
+import {call_diy_export_fun, utils_obj, getJustRollupInfo} from "./utils/utils";
 
-export {call_diy_export_fun, utils_obj}
+export {call_diy_export_fun, utils_obj, getJustRollupInfo}
