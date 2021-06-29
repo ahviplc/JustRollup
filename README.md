@@ -14,7 +14,9 @@
 
 `dist/esm/index.js 可上传npm 或者直接node项目本地引入 esm规范 package,json 中设置 "type": "module" 并且 需要 node 版本 >= 13 才可当个node的工具类库.`
 
-`dist/JustRollup.min.js 将此引入浏览器端html页面,也可以当js工具类库.`
+`dist/JustRollup.min.js 可以保证 node环境和浏览器环境 肯定都可用 将此引入浏览器端html页面,也可以当js工具类库.`
+
+`dist/JustRollup.node.min.js 可以保证 node环境肯定可用 浏览器环境不一定 请自行测试`
 
 ### 🏠 [Homepage-gitee](https://gitee.com/ahviplc/JustRollup)
 
