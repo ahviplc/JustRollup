@@ -152,6 +152,18 @@ https://www.jsdelivr.com/package/npm/ramda
 
 ramda CDN by jsDelivr - A CDN for npm and GitHub
 https://www.jsdelivr.com/package/npm/ramda?tab=collection
+
+Lodash 简介 | Lodash 中文文档 | Lodash 中文网
+https://www.lodashjs.com/
+
+lodash.add | Lodash 中文文档 | Lodash 中文网
+https://www.lodashjs.com/docs/lodash.add
+
+Lodash 中文网
+http://lodash.net/
+
+GitHub - lodash/lodash: A modern JavaScript utility library delivering modularity, performance, & extras.
+https://github.com/lodash/lodash
 ```
 
 ## Notes
