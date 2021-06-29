@@ -102,9 +102,15 @@
     // ramdajs R 挂载在 window 上 具体用法看其开发文档
     console.log('window.R.add(1, 11)', window.R.add(1, 11));
 
-    // 也可直接使用
+    // R 也可直接使用
     console.log('R.add(1, 11)', R.add(1, 11));
     console.log('window.R.equals(1, 1)', window.R.equals(1, 1));
+
+    // lodashjs _ 挂载在 window 上 具体用法看其开发文档
+    // _ 也可直接使用
+    console.log('window._.add(6, 4)', window._.add(6, 4))
+    console.log('_.add(6, 4)', _.add(6, 4))
+    // => 10
 
     // JustRollup 挂载在 window 上
     // window.JustRollup // {cm: ƒ, goodbye: ƒ, hello: ƒ}
