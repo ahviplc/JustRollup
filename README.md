@@ -188,6 +188,30 @@ https://blog.csdn.net/qq_43518645/article/details/107254720
 
 如何设计API返回码（错误码）？_东东爱编码博客-CSDN博客
 https://blog.csdn.net/u012365780/article/details/108468577
+
+[译] 使用 microbundle 打包 TypeScript 组件库_tonylua的博客-CSDN博客
+https://blog.csdn.net/tonylua/article/details/107805066
+
+microbundle - npm
+https://www.npmjs.com/package/microbundle
+
+GitHub - developit/microbundle: 📦 Zero-configuration bundler for tiny modules.
+https://github.com/developit/microbundle
+
+GitHub - isaacs/rimraf: A `rm -rf` util for nodejs
+https://github.com/isaacs/rimraf
+
+sade - npm
+https://www.npmjs.com/package/sade
+
+GitHub - lukeed/sade: Smooth (CLI) Operator 🎶
+https://github.com/lukeed/sade
+
+gzip-size - npm
+https://www.npmjs.com/package/gzip-size
+
+GitHub - sindresorhus/gzip-size: Get the gzipped size of a string or buffer
+https://github.com/sindresorhus/gzip-size
 ```
 
 ## Notes
